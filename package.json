@@ -1,0 +1,65 @@
+{
+  "name": "systembridge",
+  "version": "0.1.0",
+  "description": "Unified, cross-platform Node.js API for system operations.",
+  "type": "module",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "build:esm": "tsc -p tsconfig.build.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build": "npm run clean && npm run build:esm && npm run build:cjs",
+    "typecheck": "tsc -p tsconfig.build.json --noEmit",
+    "lint": "eslint \"{src,tests}/**/*.ts\"",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "coverage": "c8 vitest run",
+    "docs": "typedoc",
+    "prepare": "npm run build"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "system",
+    "bridge",
+    "cross-platform",
+    "automation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "chokidar": "^3.6.0",
+    "clipboardy": "^4.0.0",
+    "node-notifier": "^10.0.1",
+    "pidusage": "^3.0.2",
+    "ps-list": "^8.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "@types/node-notifier": "^8.0.5",
+    "@types/pidusage": "^2.0.5",
+    "@typescript-eslint/eslint-plugin": "^7.8.0",
+    "@typescript-eslint/parser": "^7.8.0",
+    "c8": "^9.1.0",
+    "eslint": "^8.57.0",
+    "rimraf": "^5.0.5",
+    "typedoc": "^0.25.10",
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
+  }
+}
