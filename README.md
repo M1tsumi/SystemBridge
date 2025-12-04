@@ -103,13 +103,5 @@ Unit tests use [Vitest](https://vitest.dev). To run the suite:
 npm test
 ```
 
-Coverage is provided via `npm run coverage` (uses `c8`). Tests rely on mocks so they do not require elevated permissions or desktop facilities.
-
-## Development
-
-1. Clone the repo and install deps (`npm install`).
-2. Build artifacts via `npm run build` (emits dual ESM/CJS bundles + types).
-3. Lint with `npm run lint`.
-4. Generate API docs (Typedoc) via `npm run docs`.
 
 We follow SemVer once `1.0.0` is released. Until then expect minor breaking changes during `0.x` releases. Contributions and bug reports are welcome—please include OS/environment details when filing issues.
